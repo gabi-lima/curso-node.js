@@ -7,7 +7,7 @@ function requestHandler(req, res) {
     res.write("<html>");
     res.write("<head><title> Minha primeira página! </title></head>");
     res.write(
-      "<body><form action='/message' method='POST'><input type='text' name ='message'><button type='submit'>Enviar</button></form></body>"
+      "<body><form action='/message' method='POST'><label>Username</label><input type='text' name ='message'><button type='submit'>Enviar</button></form></body>"
     );
     res.write("</html>");
     return res.end();
@@ -19,17 +19,14 @@ function requestHandler(req, res) {
       console.log(chunk);
       body.push(chunk);
     });
-    return req.on("end", () => {
+    req.on("end", () => {
       const parsedBody = Buffer.concat(body).toString();
       const message = parsedBody.split("=")[1];
-      fs.writeFile("message.txt", message, (err) => {
-        res.statusCode = 302;
-        res.setHeader = ("Location", "/");
-        return res.end();
-      });
+      fs.writeFile("message.txt", message, (err) => {});
     });
-
-    //res.writeHead("302, location", "/");
+    res.statusCode = 302;
+    res.setHeader = ("Location", "/");
+    return res.end();
   }
   res.setHeader("Content-type", "text/html");
   res.write("<html>");
