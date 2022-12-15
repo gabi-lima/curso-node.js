@@ -1,0 +1,26 @@
+{
+  "name": "curso-node",
+  "version": "1.0.0",
+  "description": "Curso de Nodejs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabi-lima/curso-node.js.git"
+  },
+  "author": "Gabriel Lima",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabi-lima/curso-node.js/issues"
+  },
+  "homepage": "https://github.com/gabi-lima/curso-node.js#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
