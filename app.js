@@ -8,6 +8,9 @@ const app = express();
 const adminData = require("./routes/admin.js");
 const shopRoutes = require("./routes/shop.js");
 
+app.set("view engine", "pug");
+app.set("views", "views");
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, "public")));
