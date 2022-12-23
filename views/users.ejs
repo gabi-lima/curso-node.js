@@ -8,9 +8,11 @@
   </head>
   <body>
     <ul>
-      <% if (username.length > 0) {%>
-      <h1>a</h1>
-      <% } %>
+      <% if(userN.length > 0){%> <% for (let userNa of userN) { %>
+      <ul>
+        <%= userNa.username %>
+      </ul>
+      <% %> <% }};%>
     </ul>
   </body>
 </html>
